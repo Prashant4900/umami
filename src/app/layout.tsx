@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import { getBaseUrl } from '@/lib/get-base-url';
 import { Providers } from './Providers';
+import { Analytics } from '@vercel/analytics/next';
 import '@umami/react-zen/styles.full.css';
 import './global.css';
 
@@ -40,6 +41,7 @@ export default function ({ children }) {
         <Suspense>
           <Providers>{children}</Providers>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
