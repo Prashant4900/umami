@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
+import Script from 'next/script';
 import { getBaseUrl } from '@/lib/get-base-url';
 import { Providers } from './Providers';
 import { Analytics } from '@vercel/analytics/next';
@@ -36,6 +37,19 @@ export default function ({ children }) {
         <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#2f2f2f" media="(prefers-color-scheme: dark)" />
         <meta name="robots" content="noindex,nofollow" />
+        <Script
+          defer
+          src="https://umami.toplevelapp.top/script.js"
+          data-website-id="ecf3cedc-845b-4b20-bd55-e0c185b3ed10"
+        />
+        <Script
+          defer
+          src="https://umami.toplevelapp.top/recorder.js"
+          data-website-id="ecf3cedc-845b-4b20-bd55-e0c185b3ed10"
+          data-sample-rate="0.15"
+          data-mask-level="moderate"
+          data-max-duration="300000"
+        />
       </head>
       <body>
         <Suspense>
